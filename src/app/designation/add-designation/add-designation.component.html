@@ -1,0 +1,24 @@
+<div class="container my-5">
+  <h1 class="mb-3">Add New Designation</h1>
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="addDesignation()">
+        <div class="mb-3">
+          <label for="designationName" class="form-label">Designation Name</label>
+          <input type="text" class="form-control" id="designationName" placeholder="Enter Designation Name"
+          name="designationName" [(ngModel)]="addDesignationRequest.designationName">
+        </div>
+        <div class="mb-3">
+          <label for="department" class="form-label">Department</label>
+          <input type="text" class="form-control" id="dpartment"  placeholder="Enter Department Name"
+          name="department" [(ngModel)]="addDesignationRequest.department" >
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+

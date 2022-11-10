@@ -1,0 +1,32 @@
+<div class="container my-5">
+  
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm"  (ngSubmit)="updateDesignation()">
+        <div class="mb-3">
+          <label for="id" class="form-label">Id</label>
+          <input type="text" class="form-control" id="id"  readonly
+          name="id" [(ngModel)]="designationDetails.id">
+        </div>
+        <div class="mb-3">
+          <label for="designationName" class="form-label">Designation Name</label>
+          <input type="text" class="form-control" id="designationName"  placeholder="Enter Designation Name"
+          name="designationName" [(ngModel)]="designationDetails.designationName">
+        </div>
+        <div class="mb-3">
+          <label for="department" class="form-label">Department Name</label>
+          <input type="text" class="form-control" id="department"  placeholder="Enter Department"
+          name="department" [(ngModel)]="designationDetails.department">
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary mr-5">Save</button>
+        <button type="button" class="btn btn-danger" (click)="deleteDesignation(designationDetails.id)">Delete</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+

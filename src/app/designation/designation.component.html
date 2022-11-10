@@ -1,0 +1,41 @@
+<label>Filter Department:&nbsp;</label>
+<input [(ngModel)]="Department">
+<button type="button" (click)="onDepartmentFilter()">Search</button>
+<button type="button" (click)="onDepartmentFilterClear()">Clear</button> &nbsp;
+
+<label>Sort by &nbsp;</label>
+<select [(ngModel)]="SortbyParam">
+  <option value="Department">Department</option>
+  <option value="Id">Id</option>
+</select>
+<button type="button" (click)="onSortDirection()">
+  <i *ngIf="SortDirection==='asc' " class="fas fa-sort-alpha-down"></i>
+  <i *ngIf="SortDirection==='desc' " class="fas fa-sort-alpha-up"></i>
+</button>
+
+<div class="container my-5" >
+  <h1 class="mb-3">Designations</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Designation Name</th>
+        <th>Department</th>
+
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let designation of designations|filter:SearchDepartment:'Department'|sort:[SortbyParam,SortDirection]">
+        <td>{{designation.id}}</td>
+        <td>{{designation.designationName}}</td>
+        <td>{{designation.department}}</td>
+        <td><a [routerLink]="['/designation','edit',designation.id]">View</a></td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+

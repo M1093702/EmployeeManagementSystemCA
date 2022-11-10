@@ -1,0 +1,37 @@
+<div class="container my-5">
+
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm"  (ngSubmit)="updateLeave()">
+        <div class="mb-3">
+          <label for="id" class="form-label">Id</label>
+          <input type="text" class="form-control" id="id"  readonly
+          name="id" [(ngModel)]="leaveDetails.id">
+        </div>
+        <div class="mb-3">
+          <label for="startDate" class="form-label">Start Date</label>
+          <input type="date" class="form-control" id="startDate"  placeholder="Enter Start Date"
+          name="startDate" [(ngModel)]="leaveDetails.startDate">
+        </div>
+        <div class="mb-3">
+          <label for="endDate" class="form-label">End Date</label>
+          <input type="date" class="form-control" id="endDate"  placeholder="Enter End Date"
+          name="endDate" [(ngModel)]="leaveDetails.endDate">
+        </div>
+        <div class="mb-3">
+          <label for="type" class="form-label">Type</label>
+          <input type="text" class="form-control" id="type"  placeholder="Enter Leave Type"
+          name="type" [(ngModel)]="leaveDetails.type">
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary mr-5">Save</button>
+        <button type="button" class="btn btn-danger" (click)="deleteLeave(leaveDetails.id)">Delete</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+
